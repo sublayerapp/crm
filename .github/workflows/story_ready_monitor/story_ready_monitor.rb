@@ -27,7 +27,7 @@ GithubCreateBranchAction.new(repo: repo, base_branch: "main", new_branch: issue_
 GithubCreatePRAction.new(
   repo: repo,
   base: "main",
-  head: branch_name,
+  head: issue_branch_name,
   title: issues.first.summary,
   body: description
 ).call
