@@ -60,4 +60,4 @@ GithubCreatePRAction.new(
   head: cucumber_branch_name,
   title: "Add Cucumber tests for #{issues.first.summary}",
   body: "This PR adds Cucumber tests for the JIRA story #{issues.first.key}:\n #{cucumber_files.high_level_feature_description}"
-)
+).call
