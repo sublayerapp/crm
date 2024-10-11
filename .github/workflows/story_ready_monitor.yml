@@ -26,5 +26,8 @@ jobs:
           GITHUB_ACCESS_TOKEN: ${{ secrets.REPOSITORY_ACCESS_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           JIRA_API_KEY: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_USERNAME: "scott@sublayer.com"
+          JIRA_SITE: "https://sublayer.atlassian.net"
+
 
         run: ruby crm/.github/workflows/story_ready_monitor/story_ready_monitor.rb

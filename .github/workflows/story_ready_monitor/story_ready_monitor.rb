@@ -14,8 +14,6 @@ Sublayer.configuration.ai_model = "gemini-1.5-pro-latest"
 Sublayer.configuration.logger = Sublayer::Logging::DebugLogger.new
 
 # Add custom Github Action code below:
-ENV['JIRA_USERNAME'] = "scott@sublayer.com"
-ENV["JIRA_SITE"] = "https://sublayer.atlassian.net"
 repo = "sublayerapp/crm"
 
 issues = JiraGetProjectIssuesAction.new(project_key: "CRM", jql_filter: "status = 'ready'").call
