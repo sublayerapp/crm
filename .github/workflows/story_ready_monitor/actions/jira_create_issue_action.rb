@@ -1,5 +1,3 @@
-require "pry"
-
 class JiraCreateIssueAction < Sublayer::Actions::Base
   def initialize(project_key:, issue_type:, summary:, description: nil, custom_fields: {})
     @project_key = project_key

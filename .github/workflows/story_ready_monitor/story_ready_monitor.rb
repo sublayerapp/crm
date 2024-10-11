@@ -3,7 +3,6 @@ require "base64"
 require "sublayer"
 require "jira-ruby"
 require "octokit"
-require "pry"
 
 # Load all Sublayer Actions, Generators, and Agents
 Dir[File.join(__dir__, "actions", "*.rb")].each { |file| require file }

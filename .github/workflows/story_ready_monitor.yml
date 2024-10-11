@@ -19,7 +19,7 @@ jobs:
           ruby-version: 3.2
       - name: Install dependencies
         run: |
-          gem install sublayer octokit
+          gem install sublayer octokit jira-ruby
       - name: Run story_ready_monitor
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
