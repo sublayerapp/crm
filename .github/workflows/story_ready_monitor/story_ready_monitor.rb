@@ -62,8 +62,3 @@ GithubCreatePRAction.new(
   title: "Add Cucumber tests for #{issues.first.summary}",
   body: "This PR adds Cucumber tests for the JIRA story #{issues.first.key}:\n #{cucumber_files.high_level_feature_description}"
 )
-
-
-# binding.pry
-# puts description
-# puts issues
