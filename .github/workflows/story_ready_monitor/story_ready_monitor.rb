@@ -11,7 +11,6 @@ Dir[File.join(__dir__, "agents", "*.rb")].each { |file| require file }
 
 Sublayer.configuration.ai_provider = Sublayer::Providers::Gemini
 Sublayer.configuration.ai_model = "gemini-1.5-pro-latest"
-Sublayer.configuration.logger = Sublayer::Logging::DebugLogger.new
 
 # Add custom Github Action code below:
 repo = "sublayerapp/crm"
