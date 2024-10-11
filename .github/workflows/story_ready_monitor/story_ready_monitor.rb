@@ -21,7 +21,7 @@ description = JiraGetIssueDescriptionAction.new(issue_key: issues.first.key).cal
 
 project_context = GetContextAction.new(path: "#{ENV['GITHUB_WORKSPACE']}/crm").call
 
-issue_branch_name = "issue-#{issue.first.id}"
+issue_branch_name = "issue-#{issues.first.id}"
 
 GithubCreateBranchAction.new(repo: repo, base_branch: "main", new_branch: issue_branch_name).call
 GithubCreatePRAction.new(
