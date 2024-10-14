@@ -8,14 +8,11 @@ class GithubCreateEmptyCommitAction < Sublayer::Actions::Base
 
   def call
     begin
-      latest_commit = @client.ref(@repo, "heads/#{@branch}").object.sha
-      @client.create_commit(@repo, @commit_message, latest_commit, latest_commit)
-      ref = @client.update_ref(@repo, "heads/#{@branch}", latest_commit)
-      commit_url = ref.object.url
-      Sublayer.configuration.logger.log(:info, "Empty commit created successfully on branch #{@branch}: #{commit_url}")
-      commit_url
-    rescue Octokit::Error => e
-      error_message = "Error creating empty commit: #{e.message}"
+      base_sha = @client.ref(@repo, "heads/#{@branch}").object.sha
+      @client.create_commit(@repo, @commit_message, base_sha, [])
+      Sublayer.configuration.logger.log(:info, "Created empty commit on branch #{@branch} of #{@repo}")
+    rescue Octokit::UnprocessableEntity => e
+      error_message = "Error creating empty commit: #{e.message}. Check if the branch already exists and if the commit message is valid."
       Sublayer.configuration.logger.log(:error, error_message)
       raise StandardError, error_message
     end
