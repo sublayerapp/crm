@@ -25,7 +25,7 @@ project_context = GetContextAction.new(path: "#{ENV['GITHUB_WORKSPACE']}/crm").c
 implementation_plan = ImplementationPlanGenerator.new(
   pr_info: pr_info,
   issue_info: issue_info,
-  repo_context: repo_context
+  repo_context: project_context
 ).generate
 
 new_pr = GithubCreatePRAction.new(
