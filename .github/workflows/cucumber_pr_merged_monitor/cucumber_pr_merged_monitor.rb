@@ -15,6 +15,8 @@ Sublayer.configuration.ai_model = "gemini-1.5-pro-latest"
 
 repo = "sublayerapp/crm"
 issue_number = ENV['GITHUB_REF'].split('/').last.split('-').last
+puts "GITHUB REF: #{ENV['GITHUB_REF']}"
+puts "ISSUE NUMBER: #{issue_number}"
 pr_number = ENV['PR_NUMBER']
 
 pr_info = GetPRChangesAction.new(repo: repo, pr_number: pr_number).call
