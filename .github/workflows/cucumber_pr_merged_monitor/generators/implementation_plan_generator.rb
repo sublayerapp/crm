@@ -32,7 +32,7 @@ class ImplementationPlanGenerator < Sublayer::Generators::Base
     3. For each file, provide a detailed description of the changes or additions required
     4. Any potential challenges or considerations for the implementation
 
-    Format your response as a well-structured Markdown document with appropriate headings and lists. Never use triple backticks "```" for code blocks in your response
+    Format your response as plain text with a paragraph and bullet points for each section, use no additional formatting
     PROMPT
   end
 end
