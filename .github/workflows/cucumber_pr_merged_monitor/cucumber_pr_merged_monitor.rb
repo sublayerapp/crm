@@ -1,6 +1,7 @@
 require "base64"
 
 require "sublayer"
+require "jira-ruby"
 require "octokit"
 
 # Load all Sublayer Actions, Generators, and Agents
