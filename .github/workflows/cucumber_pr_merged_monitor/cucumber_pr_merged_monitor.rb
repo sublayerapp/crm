@@ -19,6 +19,7 @@ branch_name = GithubGetPRBranchNameAction.new(repo: repo, pr_number: pr_number).
 issue_number = branch_name.split('-').last
 
 pr_info = GetPRChangesAction.new(repo: repo, pr_number: pr_number).call
+puts "CRM-#{issue_number}"
 issue_info = JiraGetIssueDescriptionAction.new(issue_key: "CRM-#{issue_number}").call
 project_context = GetContextAction.new(path: "#{ENV['GITHUB_WORKSPACE']}/crm").call
 
