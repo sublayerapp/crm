@@ -1,8 +1,9 @@
-class GithubAddPRLabelAction < GithubBase
+class GithubAddPRLabelAction < Sublayer::Actions::Base
   def initialize(repo:, pr_number:, label:)
-    super(repo: repo)
+    @repo = repo
     @pr_number = pr_number
     @label = label
+    @client = Octokit::Client.new(access_token: ENV['GITHUB_ACCESS_TOKEN'])
   end
 
   def call
