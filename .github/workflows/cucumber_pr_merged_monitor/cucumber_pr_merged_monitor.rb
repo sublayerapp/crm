@@ -14,10 +14,9 @@ Sublayer.configuration.ai_model = "gemini-1.5-pro-latest"
 # Add custom Github Action code below:
 
 repo = "sublayerapp/crm"
-issue_number = ENV['GITHUB_REF'].split('/').last.split('-').last
-puts "GITHUB REF: #{ENV['GITHUB_REF']}"
-puts "ISSUE NUMBER: #{issue_number}"
 pr_number = ENV['PR_NUMBER']
+branch_name = GithubGetPRBranchNameAction.new(repo: repo, pr_number: pr_number).call
+issue_number = branch_name.split('-').last
 
 pr_info = GetPRChangesAction.new(repo: repo, pr_number: pr_number).call
 issue_info = JiraGetIssueDescriptionAction.new(issue_key: issue_number).call
