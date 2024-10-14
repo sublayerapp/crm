@@ -32,7 +32,7 @@ class ImplementationPlanGenerator < Sublayer::Generators::Base
     3. For each file, provide a detailed description of the changes or additions required
     4. Any potential challenges or considerations for the implementation
 
-    Format your response as plain text with a paragraph and bullet points for each section, use no additional formatting
+    Format your response as plain text with a paragraph and bullet points for each section, use no additional formatting as this will be used as part of a text prompt for an LLM later in the process.
     PROMPT
   end
 end
