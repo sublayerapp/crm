@@ -41,4 +41,4 @@ jobs:
           JIRA_SITE: "https://sublayer.atlassian.net"
           PR_NUMBER: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
 
-        run: ruby .github/workflows/cucumber_pr_merged_monitor/cucumber_pr_merged_monitor.rb
+        run: ruby crm/.github/workflows/cucumber_pr_merged_monitor/cucumber_pr_merged_monitor.rb
