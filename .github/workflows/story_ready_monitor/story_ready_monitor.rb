@@ -23,8 +23,6 @@ project_context = GetContextAction.new(path: "#{ENV['GITHUB_WORKSPACE']}/crm").c
 issue_branch_name = "issue-#{issues.first.id}"
 
 GithubCreateBranchAction.new(repo: repo, base_branch: "main", new_branch: issue_branch_name).call
-GithubCreateEmptyCommitAction.new(repo: repo, branch: issue_branch_name, commit_message: "Initial commit for JIRA story #{issues.first.key}").call
-GithubCreatePRAction.new(repo: repo, base: "main", head: issue_branch_name, title: issues.first.summary, body: description).call
 
 cucumber_branch_name = "#{issue_branch_name}-cucumber"
 GithubCreateBranchAction.new(repo: repo, base_branch: issue_branch_name, new_branch: cucumber_branch_name).call
