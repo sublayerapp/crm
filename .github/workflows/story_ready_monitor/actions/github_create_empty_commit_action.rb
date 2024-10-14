@@ -1,6 +1,5 @@
 class GithubCreateEmptyCommitAction < Sublayer::Actions::Base
   def initialize(repo:, branch:, commit_message: "Empty commit")
-    super(repo: repo)
     @repo = repo
     @branch = branch
     @commit_message = commit_message
