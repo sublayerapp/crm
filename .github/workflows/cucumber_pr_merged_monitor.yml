@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       pr_number:
-        description: "PR number with cucumber specs to run agains"
+        description: "PR number with cucumber specs to run against"
         required: true
         type: string
   pull_request:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   cucumber_pr_merged_monitor:
-    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'cucumber')
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'cucumber'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
